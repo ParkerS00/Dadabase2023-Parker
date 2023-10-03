@@ -12,3 +12,4 @@ public partial class Joke
 
     public virtual ICollection<DeliveredJoke> DeliveredJokes { get; set; } = new List<DeliveredJoke>();
 }
+

@@ -60,7 +60,7 @@ public class JokeController : ControllerBase
         {
             name = j.JokeName,
             jokeText = j.JokeText,
-            lastDateDelivered = j.DeliveredJokes.Count == 0 ? "No Joke Found" :
+            lastDateDelivered = j.DeliveredJokes.Count == 0 ? "No Joke Date Found" :
                 j.DeliveredJokes.OrderByDescending(d => d.Delivereddate).First().Delivereddate.ToString(),
             categories = string.Join(", ", j.CategorizedJokes.Select(c => c.Jokecategory).Select(cj => cj.Categoryname))
         };

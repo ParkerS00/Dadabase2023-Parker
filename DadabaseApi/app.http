@@ -1,0 +1,49 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+@server = https://dadabaseapi20230920111645.azurewebsites.net
+
+
+
+#updated 9/24/23
+#-----------------JOKES------------------
+
+###
+GET {{server}}/v1/joke/300
+
+###
+POST {{server}}/v1/joke/
+Content-Type: application/json
+
+{
+  "id": 300,
+  "jokename": "Dustys Blind dinosaur",
+  "joketext": "What do you call a blind dinosaur? a do-you-think-he-saurus.",
+  "categorizedjokes": [],
+  "deliveredjokes": []
+}
+
+###
+#-----------DELIVERED JOKES ----------------
+
+###
+GET {{server}}/v1/deliveredjoke/300
+
+###
+POST {{server}}/v1/deliveredjoke/
+Content-Type: application/json
+
+{
+    "id": 300,
+    "delivereddate": "2023-08-10",
+    "jokereactionid": 1,
+    "jokeid": 5,
+    "audienceid": 5,
+    "notes": "Dustys Delivered Joke",
+    "audience": null,
+    "joke": null,
+    "jokereaction": null
+  }
+
+###
+#------------------------Reports---------------
+###
+GET  {{server}}/v1/Report/told_to_audience/1

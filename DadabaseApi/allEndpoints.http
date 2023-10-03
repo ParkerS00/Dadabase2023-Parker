@@ -1,0 +1,189 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+@server = https://dadabaseapi20230920111645.azurewebsites.net
+
+
+
+#updated 9/22/23
+#-----------------JOKES------------------
+#get all jokes
+GET {{server}}/v1/joke/
+
+###
+#get a specific joke by id
+GET {{server}}/v1/joke/1
+
+###
+#add a joke
+POST {{server}}/v1/joke/
+Content-Type: application/json
+
+{
+  "id": 205,
+  "jokename": "Dustys Blind dinosaur",
+  "joketext": "What do you call a blind dinosaur? a do-you-think-he-saurus.",
+  "categorizedjokes": [],
+  "deliveredjokes": []
+}
+
+
+###
+#delete a joke at an id
+DELETE {{server}}/v1/joke/205
+
+###
+PUT {{server}}/v1/joke/
+Content-Type: application/json
+
+{
+    "id" : 205,
+    "jokename" : "Dusteez Blind Joke (Updated)",
+    "joketext" : "NEW and IMPROVED joke"
+}
+
+
+###
+#------------------AUDIENCE-------------------
+#get all audiences
+GET {{server}}/v1/audience/
+
+###
+#get a specific audience by id
+GET {{server}}/v1/audience/200
+
+###
+#add an audience
+POST {{server}}/v1/audience/
+Content-Type: application/json
+
+{
+    "id": 200,
+    "audiencename": "Dusty's Audience",
+    "description": null,
+    "categorizedaudiences": [],
+    "deliveredjokes": []
+  }
+
+###
+#delete an audince at an id
+DELETE {{server}}/v1/audience/200
+
+###
+#update an audience
+PUT {{server}}/v1/audience/
+Content-Type: application/json
+
+{
+    "id": 200,
+    "audiencename": "Edited Autiend",
+    "description": null,
+    "categorizedaudiences": [],
+    "deliveredjokes": []
+  }
+
+
+
+###
+#-----------DELIVERED JOKES ----------------
+#Get all deliveries
+GET {{server}}/v1/deliveredjoke/
+
+###
+#get a delivery at an index
+GET {{server}}/v1/deliveredjoke/200
+
+###
+#add a delivery
+POST {{server}}/v1/deliveredjoke/
+Content-Type: application/json
+
+{
+    "id": 200,
+    "delivereddate": "2023-08-10",
+    "jokereactionid": 1,
+    "jokeid": 5,
+    "audienceid": 5,
+    "notes": "Dustys Delivered Joke",
+    "audience": null,
+    "joke": null,
+    "jokereaction": null
+  }
+
+###
+#delete a delivery
+DELETE {{server}}/v1/deliveredjoke/1
+
+###
+#update a delivery
+PUT {{server}}/v1/deliveredjoke/
+Content-Type: application/json
+
+{
+    "id": 200,
+    "delivereddate": "2023-08-10",
+    "jokereactionid": 1,
+    "jokeid": 5,
+    "audienceid": 5,
+    "notes": "Booyeah",
+    "audience": null,
+    "joke": null,
+    "jokereaction": null
+}
+
+
+
+###
+#----------------------Joke Category--------------
+#get all joke categories
+GET {{server}}/v1/jokecategory/
+
+###
+#get a specific joke category by id
+GET {{server}}/v1/jokecategory/200
+
+###
+#add a category
+POST {{server}}/v1/jokecategory/
+Content-Type: application/json
+
+{
+    "id": 200,
+    "categoryname": "antijjoke",
+    "description": "was that even a joke",
+    "categorizedjokes": []
+  }
+
+###
+#delete a category at an id
+DELETE {{server}}/v1/jokecategory/1
+
+###
+#update a category
+PUT {{server}}/v1/jokecategory/
+Content-Type: application/json
+
+{
+  "id": 200,
+  "categoryname": "myCategory",
+  "description": "yahoo :)",
+  "categorizedjokes": []
+}
+
+
+
+
+###
+#------------------------Reports---------------
+###
+Get {{server}}/v1/Report/by_tag/1
+
+###
+GET  {{server}}/v1/Report/told_to_audience/1
+
+###
+GET {{server}}/v1/Report/ranked/by_score/
+
+###
+GET {{server}}/v1/Report/ranked/by_score/by_tag/1
+
+###
+GET {{server}}/v1/Report/ranked/by_score/for_audience/1
